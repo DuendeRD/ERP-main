@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title> Dashboard </title>
+
+    {% load static  %}
+
+    
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+    
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxl-c-plus-plus'></i>
+            <span class="logo_name">Sistema Inventario</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="#" class="active">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="table">
+                    <i class='bx bx-list-ul'></i>
+                    <span class="links_name">Adquisicion</span>
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#">
+                    <i class='bx bx-box'></i>
+                    <span class="links_name">Productos</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-list-ul'></i>
+                    <span class="links_name">Transferencias</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">Reportes</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'table' %}">
+                    <i class='bx bx-coin-stack'></i>
+                    <span class="links_name">Inventario</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-cog'></i>
+                    <span class="links_name">Ajustes</span>
+                </a>
+            </li>
+            <li class="log_out">
+                <a href="#">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Cerrar sesion</span>
+                </a>
+            </li>
+        </ul>
+
+        <nav>
+
+            <div class="profile-details">
+                <img src="{% static 'assets/img/user.jpg' %}" alt="">
+                <span class="admin_name">Usuario registrado</span>
+                <i class='bx bx-chevron-down'></i>
+            </div>
+        </nav>
+    </div>
+
+
+        <div class="home-section">
+            {% block content %}
+
+    
+        
+            
+            {% endblock  %}
+
+
+
+            
+        </div>
+
+   
+
+
+</body>
+
+</html>

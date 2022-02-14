@@ -1,0 +1,27 @@
+.button {
+    font-family: Arial;
+    color: #FFFFFF;
+    font-size: 22px;
+    border-radius: 16px;
+    border: 3px #3866a3 solid;
+    background: linear-gradient(180deg, #63B8EE 5%, #468CCF 100%);
+    text-shadow: 1px 1px 1px #528ecc;
+    box-shadow: inset 1px 1px 2px 0px #bbdaf7;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+}
+
+.button:hover {
+    background: linear-gradient(180deg, #468CCF 5%, #63B8EE 100%);
+}
+
+.button-icon {
+    padding: 8px 10px;
+    border-right: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: rgba(0, 0, 0, 0.14) -1px 0px 0px inset;
+}
+
+.button-text {
+    padding: 8px 38px;
+}

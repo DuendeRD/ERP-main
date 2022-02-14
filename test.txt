@@ -1,0 +1,75 @@
+from django.db import models
+from django.contrib.auth.models  import  AbstractBaseUser, BaseUserManager
+from simple_history.models import HistoricalRecords
+from django.utils import timezone
+
+# Create your models here.
+
+class UserManager(BaseUserManager):
+    
+    def create_user(self, username, email, password=None):
+        if not email:
+            raise ValueError('Requiere un email')
+
+        if not username:
+            raise ValueError('Requiere un username')
+
+        user = self.model(
+            user=self.normalize_email(username),
+            username=username,
+        )
+
+
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+    
+    def create_superuser(self, username, password):
+        user = self.create_user(
+            user=self.normalize_email(username),
+            password=password,
+            username=username,
+             )   
+
+        user.is_admin = True
+        user.is_staff = True
+        user.is_superuser = True
+        user.save(using=self._db)
+        return user
+
+class user(AbstractBaseUser):
+    username = models.AutoField(primary_key=True,unique=True)  # El nombre de usuario debe ser único
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    email = models.EmailField(unique=True)
+   # email = models.EmailField(primary_key=True,unique=True)
+    phone = models.CharField(max_length=20, blank=True)
+    address = models.CharField(max_length=150, blank=True)
+    city = models.CharField(max_length=50, blank=True)
+    country = models.CharField(max_length=50, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+    history = HistoricalRecords()
+    is_admin = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
+
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['first_name', 'last_name']
+
+    objects = UserManager()
+
+    def get_full_name(self):
+        """Retorna el nombre completo del usuario"""
+        return self.user.get_full_name()
+
+    def get_short_name(self):
+        """Retorna el nombre corto del usuario"""
+        return self.user.get_short_name()
+
+    def __str__(self):
+        """Retorna el nombre del usuario"
+        """
+        return self.username
+

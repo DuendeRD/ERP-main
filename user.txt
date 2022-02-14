@@ -1,0 +1,519 @@
+from django.db import models
+from django.contrib.auth.models  import  User #AbstractUser
+from simple_history.models import HistoricalRecords
+
+# Create your models here.
+
+
+class usuario(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=50)
+    telefono = models.CharField(max_length=10)
+    direccion = models.CharField(max_length=50)
+    ciudad = models.CharField(max_length=50)
+    pais = models.CharField(max_length=50)
+    historial = HistoricalRecords()
+
+    
+    def __str__(self):
+        return self.user.username
+        
+
+        <body class="enlarge-menu-all">
+        
+            <div class="left-sidenav">
+                <!-- LOGO -->
+                <div class="brand">
+                    <a href="index.html" class="logo">
+                        <span>
+                            <img src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm">
+                        </span>
+                        <span>
+                            <img src="assets/images/logo.png" alt="logo-large" class="logo-lg logo-light">
+                            <img src="assets/images/logo-dark.png" alt="logo-large" class="logo-lg logo-dark">
+                        </span>
+                    </a>
+                </div>
+                <!--end logo-->
+                <div class="menu-content h-100 mm-active" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px 0px -70px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 0px 0px 70px;">
+                    <ul class="metismenu left-sidenav-menu mm-show">
+                        <li class="menu-label mt-0">Main</li>
+                        <li>
+                            <a href="javascript: void(0);"> <i class="ti ti-smart-home menu-icon"></i><span>Dashboard</span><span class="menu-arrow"><i class="las la-angle-right"></i></span></a>
+                            <ul class="nav-second-level mm-collapse" aria-expanded="false">
+                                <li class="nav-item"><a class="nav-link" href="index.html">Analytics</a></li>
+                                <li class="nav-item"><a class="nav-link" href="sales-index.html">Sales</a></li> 
+                            </ul>
+                        </li>
+                        <li class="menu-label my-2">Apps</li>
+                        <li>
+                            <a href="apps-chat.html"><i class="ti ti-brand-hipchat menu-icon"></i>
+                                <span>Chat</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="apps-contact-list.html"><i class="ti ti-headphones menu-icon"></i>
+                                <span>Contact List</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="apps-calendar.html"><i class="ti ti-calendar menu-icon"></i>
+                                <span>Calendar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="apps-files.html"><i class="ti ti-folders menu-icon"></i>
+                                <span>File Manager</span>
+                                <span class="badge badge-soft-success menu-arrow">New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="apps-invoice.html"><i class="ti ti-file-invoice menu-icon"></i>
+                                <span>Invoice</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="apps-tasks.html"><i class="ti ti-subtask menu-icon"></i>
+                                <span>Tasks</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);"><i class="ti ti-mail menu-icon"></i><span>Email</span><span class="menu-arrow"><i class="las la-angle-right"></i></span></a>
+                            <ul class="nav-second-level mm-collapse" aria-expanded="false">
+                                <li class="nav-item"><a class="nav-link" href="apps-email-inbox.html">Inbox</a></li>
+                                <li class="nav-item"><a class="nav-link" href="apps-email-read.html">Read Email</a></li>
+                            </ul>
+                        </li> 
+    
+                        <li class="menu-label my-2">Components</li>
+    
+                        <li>
+                            <a href="javascript: void(0);"><i class="ti ti-planet menu-icon"></i><span>UI Elements</span><span class="menu-arrow"><i class="las la-angle-right"></i></span></a>
+                            <ul class="nav-second-level mm-collapse" aria-expanded="false">                                  
+                                <li class="nav-item"><a class="nav-link" href="ui-alerts.html">Alerts</a></li>                                    
+                                <li class="nav-item"><a class="nav-link" href="ui-avatar.html">Avatar</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ui-buttons.html">Buttons</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ui-badges.html">Badges</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ui-cards.html">Cards</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ui-carousels.html">Carousels</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ui-check-radio.html"><span>Check &amp; Radio</span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="ui-dropdowns.html">Dropdowns</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ui-grids.html">Grids</a></li> 
+                                <li class="nav-item"><a class="nav-link" href="ui-images.html">Images</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ui-list.html">List</a></li>                                   
+                                <li class="nav-item"><a class="nav-link" href="ui-modals.html">Modals</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ui-navs.html">Navs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ui-navbar.html">Navbar</a></li> 
+                                <li class="nav-item"><a class="nav-link" href="ui-paginations.html">Paginations</a></li>   
+                                <li class="nav-item"><a class="nav-link" href="ui-popover-tooltips.html">Popover &amp; Tooltips</a></li>                                
+                                <li class="nav-item"><a class="nav-link" href="ui-progress.html">Progress</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ui-spinners.html">Spinners</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ui-tabs-accordions.html">Tabs &amp; Accordions</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ui-toasts.html">Toasts</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ui-typography.html">Typography</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ui-videos.html">Videos</a></li> 
+                            </ul>
+                        </li> 
+    
+                        <li>
+                            <a href="javascript: void(0);"><i class="ti ti-chart-bubble menu-icon"></i><span>Advanced UI</span><span class="menu-arrow"><i class="las la-angle-right"></i></span></a>
+                            <ul class="nav-second-level mm-collapse" aria-expanded="false">
+                               <li class="nav-item"><a class="nav-link" href="advanced-animation.html">Animation</a></li>
+                               <li class="nav-item"><a class="nav-link" href="advanced-clipboard.html">Clip Board</a></li>
+                               <li class="nav-item"><a class="nav-link" href="advanced-highlight.html">Highlight</a></li>
+                               <li class="nav-item"><a class="nav-link" href="advanced-idle-timer.html">Idle Timer</a></li>
+                               <li class="nav-item"><a class="nav-link" href="advanced-kanban.html">Kanban</a></li>
+                               <li class="nav-item"><a class="nav-link" href="advanced-lightbox.html">Lightbox</a></li> 
+                               <li class="nav-item"><a class="nav-link" href="advanced-nestable.html">Nestable List</a></li>
+                               <li class="nav-item"><a class="nav-link" href="advanced-rangeslider.html">Range Slider</a></li>
+                               <li class="nav-item"><a class="nav-link" href="advanced-ratings.html">Ratings</a></li>
+                               <li class="nav-item"><a class="nav-link" href="advanced-ribbons.html">Ribbons</a></li>
+                               <li class="nav-item"><a class="nav-link" href="advanced-session.html">Session Timeout</a></li>
+                               <li class="nav-item"><a class="nav-link" href="advanced-sweetalerts.html">Sweet Alerts</a></li>
+                            </ul>
+                        </li> 
+    
+                        <li>
+                            <a href="javascript: void(0);"><i class="ti ti-forms menu-icon"></i><span>Forms</span><span class="badge badge-soft-primary menu-arrow">08</span></a>
+                            <ul class="nav-second-level mm-collapse" aria-expanded="false">
+                                 <li class="nav-item"><a class="nav-link" href="forms-advanced.html">Advance Elements</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="forms-elements.html">Basic Elements</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="forms-editors.html">Editors</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="forms-uploads.html">File Upload</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="forms-repeater.html">Repeater</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="forms-validation.html">Validation</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="forms-wizard.html">Wizard</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="forms-x-editable.html">X Editable</a></li>
+                            </ul>
+                        </li> 
+                        <li>
+                            <a href="javascript: void(0);"><i class="ti ti-chart-donut menu-icon"></i><span>Charts</span><span class="menu-arrow"><i class="las la-angle-right"></i></span></a>
+                            <ul class="nav-second-level mm-collapse" aria-expanded="false">
+                                 <li class="nav-item"><a class="nav-link" href="charts-apex.html">Apex</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="charts-chartjs.html">Chartjs</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="charts-flot.html">Flot</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="charts-morris.html">Morris</a></li>
+                            </ul>
+                        </li> 
+                        <li>
+                            <a href="javascript: void(0);"><i class="ti ti-table menu-icon"></i><span>Tables</span><span class="menu-arrow"><i class="las la-angle-right"></i></span></a>
+                            <ul class="nav-second-level mm-collapse" aria-expanded="false">
+                                 <li class="nav-item"><a class="nav-link" href="tables-basic.html">Basic</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="tables-datatable.html">Datatables</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="tables-editable.html">Editable</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="tables-responsive.html">Responsive</a></li>
+                            </ul>
+                        </li> 
+                        <li>
+                            <a href="javascript: void(0);"><i class="ti ti-parachute menu-icon"></i><span>Icons</span><span class="menu-arrow"><i class="las la-angle-right"></i></span></a>
+                            <ul class="nav-second-level mm-collapse" aria-expanded="false">
+                                 <li class="nav-item"><a class="nav-link" href="icons-dripicons.html">Dripicons</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="icons-feather.html">Feather</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="icons-fontawesome.html">Font awesome</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="icons-materialdesign.html">Material Design</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="icons-tabler.html">Tabler</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="icons-typicons.html">Typicons</a></li>
+                            </ul>
+                        </li> 
+                        <li>
+                            <a href="javascript: void(0);"><i class="ti ti-map menu-icon"></i><span>Maps</span><span class="menu-arrow"><i class="las la-angle-right"></i></span></a>
+                            <ul class="nav-second-level mm-collapse" aria-expanded="false">
+                                 <li class="nav-item"><a class="nav-link" href="maps-google.html">Google Maps</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="maps-leaflet.html">Leaflet Maps</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="maps-vector.html">Vector Maps</a></li> 
+                            </ul>
+                        </li> 
+                        <li class="mm-active active">
+                            <a href="javascript: void(0);" class="active"><i class="ti ti-target menu-icon"></i><span>Email Template</span><span class="menu-arrow"><i class="las la-angle-right"></i></span></a>
+                            <ul class="nav-second-level mm-collapse in mm-show" aria-expanded="false">
+                                 <li class="nav-item"><a class="nav-link" href="email-templates-alert.html">Alert Email</a></li>
+                                 <li class="nav-item active"><a class="nav-link active" href="email-templates-basic.html">Basic Action Email</a></li>                                    
+                                 <li class="nav-item"><a class="nav-link" href="email-templates-billing.html">Billing Email</a></li>
+                            </ul>
+                        </li> 
+        
+                        
+                        <li class="menu-label my-2">Crafted</li>
+                        <li>
+                            <a href="widgets.html"><i class="ti ti-stack menu-icon"></i><span>Widgets</span><span class="badge badge-soft-success menu-arrow">New</span></a>
+                        </li>
+        
+                        <li>
+                            <a href="javascript: void(0);"><i class="ti ti-file-diff menu-icon"></i><span>Pages</span><span class="menu-arrow"><i class="las la-angle-right"></i></span></a>
+                            <ul class="nav-second-level mm-collapse" aria-expanded="false">
+                                <li class="nav-item"><a class="nav-link" href="pages-blogs.html">Blogs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="pages-faqs.html">FAQs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="pages-pricing.html">Pricing</a></li>
+                                <li class="nav-item"><a class="nav-link" href="pages-profile.html">Profile</a></li>   
+                                <li class="nav-item"><a class="nav-link" href="pages-starter.html">Starter Page</a></li>                         
+                                <li class="nav-item"><a class="nav-link" href="pages-timeline.html">Timeline</a></li>
+                            </ul>
+                        </li> 
+                        <li>
+                            <a href="javascript: void(0);"><i class="ti ti-shield-lock menu-icon"></i><span>Authentication</span><span class="menu-arrow"><i class="las la-angle-right"></i></span></a>
+                            <ul class="nav-second-level mm-collapse" aria-expanded="false">
+                                <li class="nav-item"><a class="nav-link" href="auth-login.html">Log in</a></li>
+                                <li class="nav-item"><a class="nav-link" href="auth-register.html">Register</a></li>
+                                <li class="nav-item"><a class="nav-link" href="auth-recover-pw.html">Recover Password</a></li>
+                                <li class="nav-item"><a class="nav-link" href="auth-lock-screen.html">Lock Screen</a></li>
+                                <li class="nav-item"><a class="nav-link" href="auth-404.html">Error 404</a></li>
+                                <li class="nav-item"><a class="nav-link" href="auth-500.html">Error 500</a></li>
+                            </ul>
+                        </li> 
+                    </ul>
+        
+                    
+                </div></div></div></div><div class="simplebar-placeholder" style="width: auto; height: 1313px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 561px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
+            </div>
+            
+            
+    
+            <div class="page-wrapper">
+                
+                <div class="topbar">            
+                    <!-- Navbar -->
+                    <nav class="navbar-custom">    
+                        <ul class="list-unstyled topbar-nav float-end mb-0"> 
+                            <li class="notification-list">
+                                <a class="nav-link arrow-none nav-icon offcanvas-btn" href="#" data-bs-toggle="offcanvas" data-bs-target="#Appearance" role="button" aria-controls="Rightbar">
+                                    <!-- <i data-feather="settings" class="align-self-center topbar-icon fe-spin spinner-border"></i> -->
+                                    <i class="ti ti-settings ti-spin"></i>
+                                </a>
+                            </li>                       
+                            
+                            
+    
+                            <li class="dropdown notification-list">
+                                <a class="nav-link dropdown-toggle arrow-none nav-icon" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <i class="ti ti-bell"></i>
+                                    <span class="alert-badge"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-lg pt-0">
+                                
+                                    <h6 class="dropdown-item-text font-15 m-0 py-3 border-bottom d-flex justify-content-between align-items-center">
+                                        Notifications <span class="badge bg-soft-primary badge-pill">2</span>
+                                    </h6> 
+                                    <div class="notification-menu" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: auto; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
+                                        <!-- item-->
+                                        <a href="#" class="dropdown-item py-3">
+                                            <small class="float-end text-muted ps-2">2 min ago</small>
+                                            <div class="media">
+                                                <div class="avatar-md bg-soft-primary">
+                                                    <i class="ti ti-chart-arcs"></i>
+                                                </div>
+                                                <div class="media-body align-self-center ms-2 text-truncate">
+                                                    <h6 class="my-0 fw-normal text-dark">Your order is placed</h6>
+                                                    <small class="text-muted mb-0">Dummy text of the printing and industry.</small>
+                                                </div><!--end media-body-->
+                                            </div><!--end media-->
+                                        </a><!--end-item-->
+                                        <!-- item-->
+                                        <a href="#" class="dropdown-item py-3">
+                                            <small class="float-end text-muted ps-2">10 min ago</small>
+                                            <div class="media">
+                                                <div class="avatar-md bg-soft-primary">
+                                                    <i class="ti ti-device-computer-camera"></i>
+                                                </div>
+                                                <div class="media-body align-self-center ms-2 text-truncate">
+                                                    <h6 class="my-0 fw-normal text-dark">Meeting with designers</h6>
+                                                    <small class="text-muted mb-0">It is a long established fact that a reader.</small>
+                                                </div><!--end media-body-->
+                                            </div><!--end media-->
+                                        </a><!--end-item-->
+                                        <!-- item-->
+                                        <a href="#" class="dropdown-item py-3">
+                                            <small class="float-end text-muted ps-2">40 min ago</small>
+                                            <div class="media">
+                                                <div class="avatar-md bg-soft-primary">                                                    
+                                                    <i class="ti ti-diamond"></i>
+                                                </div>
+                                                <div class="media-body align-self-center ms-2 text-truncate">
+                                                    <h6 class="my-0 fw-normal text-dark">UX 3 Task complete.</h6>
+                                                    <small class="text-muted mb-0">Dummy text of the printing.</small>
+                                                </div><!--end media-body-->
+                                            </div><!--end media-->
+                                        </a><!--end-item-->
+                                        <!-- item-->
+                                        <a href="#" class="dropdown-item py-3">
+                                            <small class="float-end text-muted ps-2">1 hr ago</small>
+                                            <div class="media">
+                                                <div class="avatar-md bg-soft-primary">
+                                                    <i class="ti ti-drone"></i>
+                                                </div>
+                                                <div class="media-body align-self-center ms-2 text-truncate">
+                                                    <h6 class="my-0 fw-normal text-dark">Your order is placed</h6>
+                                                    <small class="text-muted mb-0">It is a long established fact that a reader.</small>
+                                                </div><!--end media-body-->
+                                            </div><!--end media-->
+                                        </a><!--end-item-->
+                                        <!-- item-->
+                                        <a href="#" class="dropdown-item py-3">
+                                            <small class="float-end text-muted ps-2">2 hrs ago</small>
+                                            <div class="media">
+                                                <div class="avatar-md bg-soft-primary">
+                                                    <i class="ti ti-users"></i>
+                                                </div>
+                                                <div class="media-body align-self-center ms-2 text-truncate">
+                                                    <h6 class="my-0 fw-normal text-dark">Payment Successfull</h6>
+                                                    <small class="text-muted mb-0">Dummy text of the printing.</small>
+                                                </div><!--end media-body-->
+                                            </div><!--end media-->
+                                        </a><!--end-item-->
+                                    </div></div></div></div><div class="simplebar-placeholder" style="width: 0px; height: 0px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; display: none;"></div></div></div>
+                                    <!-- All-->
+                                    <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
+                                        View all <i class="fi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </li>
+    
+                            <li class="dropdown">
+                                <a class="nav-link dropdown-toggle nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/images/users/user-4.jpg" alt="profile-user" class="rounded-circle me-2 thumb-sm">
+                                        <div>
+                                            <small class="d-none d-md-block font-11">Admin</small>
+                                            <span class="d-none d-md-block fw-semibold font-12">Maria Gibson <i class="mdi mdi-chevron-down"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a class="dropdown-item" href="#"><i class="ti ti-user font-16 me-1 align-text-bottom"></i> Profile</a>
+                                    <a class="dropdown-item" href="#"><i class="ti ti-settings font-16 me-1 align-text-bottom"></i> Settings</a>
+                                    <div class="dropdown-divider mb-0"></div>
+                                    <a class="dropdown-item" href="#"><i class="ti ti-power font-16 me-1 align-text-bottom"></i> Logout</a>
+                                </div>
+                            </li><!--end topbar-profile-->
+                        </ul><!--end topbar-nav-->
+            
+                        <ul class="list-unstyled topbar-nav mb-0">                        
+                            <li>
+                                <button class="nav-link button-menu-mobile nav-icon">
+                                    <!-- <i data-feather="menu" class="align-self-center topbar-icon"></i> -->
+                                    <i class="ti ti-menu-2"></i>
+                                </button>
+                            </li> 
+                            <li class="hide-phone app-search">
+                                <form role="search" action="#" method="get">
+                                    <input type="search" name="search" class="form-control top-search mb-0" placeholder="Type text...">
+                                    <button type="submit"><i class="ti ti-search"></i></button>
+                                </form>
+                            </li>                       
+                        </ul>
+                    </nav>
+                    <!-- end navbar-->
+                </div>
+                
+    
+                
+                <div class="page-content">
+                    <div class="container-fluid">
+                        
+                        
+                        
+                         
+    
+                    </div>
+    
+                    
+                </div>
+                
+            </div>
+            
+    
+            
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="Appearance" aria-labelledby="AppearanceLabel">
+                <div class="offcanvas-header border-bottom">
+                  <h5 class="m-0 font-14" id="AppearanceLabel">Appearance</h5>
+                  <button type="button" class="btn-close text-reset p-0 m-0 align-self-center" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">  
+                    <h6>Account Settings</h6>
+                    <div class="p-2 text-start mt-3">
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="settings-switch1">
+                            <label class="form-check-label" for="settings-switch1">Auto updates</label>
+                        </div><!--end form-switch-->
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="settings-switch2" checked="">
+                            <label class="form-check-label" for="settings-switch2">Location Permission</label>
+                        </div><!--end form-switch-->
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="settings-switch3">
+                            <label class="form-check-label" for="settings-switch3">Show offline Contacts</label>
+                        </div><!--end form-switch-->
+                    </div><!--end /div-->
+                    <h6>General Settings</h6>
+                    <div class="p-2 text-start mt-3">
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="settings-switch4">
+                            <label class="form-check-label" for="settings-switch4">Show me Online</label>
+                        </div><!--end form-switch-->
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="settings-switch5" checked="">
+                            <label class="form-check-label" for="settings-switch5">Status visible to all</label>
+                        </div><!--end form-switch-->
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="settings-switch6">
+                            <label class="form-check-label" for="settings-switch6">Notifications Popup</label>
+                        </div><!--end form-switch-->
+                    </div><!--end /div-->               
+                </div><!--end offcanvas-body-->
+            </div>
+            
+    
+    
+            
+            
+            
+            
+            
+            
+            
+            
+    
+            
+            <div class="daterangepicker ltr show-ranges opensleft"><div class="ranges"><ul><li data-range-key="Today">Today</li><li data-range-key="Yesterday">Yesterday</li><li data-range-key="Last 7 Days">Last 7 Days</li><li data-range-key="Last 30 Days">Last 30 Days</li><li data-range-key="This Month">This Month</li><li data-range-key="Last Month">Last Month</li><li data-range-key="Custom Range">Custom Range</li></ul></div><div class="drp-calendar left"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-calendar right"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-secondary" type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">Apply</button> </div></div>
+            
+        
+    
+    </body>
+
+
+
+    body {
+        margin: 0;
+        overflow-x: hidden !important;
+        font-size: .8125rem;
+        background-color: #f5f5f9;
+        color: #1d2c48;
+        min-height: 100vh;
+        letter-spacing: 0.1px;
+        line-height: 1.5;
+        display: flex;
+        position: relative;
+    }
+    @media (max-width: 1024px)
+    body {
+        display: block !important;
+    }
+    body {
+        margin: 0;
+        font-family: "Roboto",sans-serif;
+        font-size: .8125rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #1d2c48;
+        background-color: #f5f5f9;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    * {
+        outline: none !important;
+    }
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+    user agent stylesheet
+    body {
+        display: block;
+        margin: 8px;
+    }
+    :root {
+        --bs-blue: #1761fd;
+        --bs-indigo: #6610f2;
+        --bs-purple: #6d81f5;
+        --bs-pink: #fd3c97;
+        --bs-red: #f5325c;
+        --bs-orange: #ff8500;
+        --bs-yellow: #feb019;
+        --bs-green: #22b783;
+        --bs-teal: #03d87f;
+        --bs-cyan: #12a4ed;
+        --bs-white: #fff;
+        --bs-gray: #7081b9;
+        --bs-gray-dark: #2c3652;
+        --bs-primary: #1761fd;
+        --bs-secondary: #7081b9;
+        --bs-success: #22b783;
+        --bs-info: #12a4ed;
+        --bs-warning: #feb019;
+        --bs-danger: #f5325c;
+        --bs-light: #f5f5f9;
+        --bs-dark: #1d2c48;
+        --bs-pink: #fd3c97;
+        --bs-purple: #6d81f5;
+        --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        --bs-gradient: linear-gradient(180deg, rgba(255,255,255,0.15), rgba(255,255,255,0));
+    }
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+
+    
